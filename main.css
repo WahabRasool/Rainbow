@@ -1,0 +1,175 @@
+Result Skip Results Iframe
+*, *::before, *::after {
+  padding: 0;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+body {
+  background-image: linear-gradient(skyblue, darkslateblue);
+  color: #fff;
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  perspective: 800px;
+  overflow: hidden;
+}
+body *:not(:empty) {
+  transform-style: preserve-3d;
+}
+
+.scene {
+  position: relative;
+  transform: rotateX(calc(var(--y, 0) * -20deg)) rotateY(calc(var(--x, 0) * 120deg));
+  transition: transform 0.5s ease-out;
+}
+
+.rainbow {
+  position: absolute;
+  inset: -360px;
+  transform: translateY(80px);
+}
+.rainbow i {
+  position: absolute;
+  inset: 0;
+  -webkit-mask: conic-gradient(from 10deg, white, transparent 90deg 270deg, white);
+          mask: conic-gradient(from 10deg, white, transparent 90deg 270deg, white);
+  background: radial-gradient(transparent 210px, hsl(270, 100%, var(--light)), transparent 225px, hsl(230, 100%, var(--light)), transparent 240px, hsl(185, 100%, var(--light)), transparent 255px, hsl(135, 100%, var(--light)), transparent 270px, hsl(85, 100%, var(--light)), transparent 285px, hsl(40, 100%, var(--light)), transparent 300px, hsl(0, 100%, var(--light)), transparent 315px);
+  transform: translateZ(var(--translateZ));
+}
+.rainbow i:nth-child(1) {
+  --translateZ: -10px;
+  --light: 24%;
+}
+.rainbow i:nth-child(2) {
+  --translateZ: -9px;
+  --light: 28%;
+}
+.rainbow i:nth-child(3) {
+  --translateZ: -8px;
+  --light: 32%;
+}
+.rainbow i:nth-child(4) {
+  --translateZ: -7px;
+  --light: 36%;
+}
+.rainbow i:nth-child(5) {
+  --translateZ: -6px;
+  --light: 40%;
+}
+.rainbow i:nth-child(6) {
+  --translateZ: -5px;
+  --light: 44%;
+}
+.rainbow i:nth-child(7) {
+  --translateZ: -4px;
+  --light: 48%;
+}
+.rainbow i:nth-child(8) {
+  --translateZ: -3px;
+  --light: 52%;
+}
+.rainbow i:nth-child(9) {
+  --translateZ: -2px;
+  --light: 56%;
+}
+.rainbow i:nth-child(10) {
+  --translateZ: -1px;
+  --light: 60%;
+}
+.rainbow i:nth-child(11) {
+  --translateZ: 0px;
+  --light: 64%;
+}
+.rainbow i:nth-child(12) {
+  --translateZ: 1px;
+  --light: 68%;
+}
+
+.cloud {
+  position: absolute;
+}
+.cloud i {
+  position: absolute;
+  inset: -60px;
+  background: radial-gradient(closest-side, #fff, transparent);
+  transition: transform 0.5s ease-out;
+}
+.cloud i:nth-child(1) {
+  transform: rotateY(156deg) translateZ(58px) rotateY(-156deg) rotateY(calc(var(--x, 0) * -120deg)) rotateX(calc(var(--y, 0) * 20deg)) scale(1.46);
+}
+.cloud i:nth-child(2) {
+  transform: rotateY(190deg) translateZ(16px) rotateY(-190deg) rotateY(calc(var(--x, 0) * -120deg)) rotateX(calc(var(--y, 0) * 20deg)) scale(0.99);
+}
+.cloud i:nth-child(3) {
+  transform: rotateY(278deg) translateZ(51px) rotateY(-278deg) rotateY(calc(var(--x, 0) * -120deg)) rotateX(calc(var(--y, 0) * 20deg)) scale(0.61);
+}
+.cloud i:nth-child(4) {
+  transform: rotateY(309deg) translateZ(90px) rotateY(-309deg) rotateY(calc(var(--x, 0) * -120deg)) rotateX(calc(var(--y, 0) * 20deg)) scale(1.13);
+}
+.cloud i:nth-child(5) {
+  transform: rotateY(328deg) translateZ(117px) rotateY(-328deg) rotateY(calc(var(--x, 0) * -120deg)) rotateX(calc(var(--y, 0) * 20deg)) scale(1.17);
+}
+.cloud i:nth-child(6) {
+  transform: rotateY(206deg) translateZ(39px) rotateY(-206deg) rotateY(calc(var(--x, 0) * -120deg)) rotateX(calc(var(--y, 0) * 20deg)) scale(0.56);
+}
+.cloud i:nth-child(7) {
+  transform: rotateY(254deg) translateZ(44px) rotateY(-254deg) rotateY(calc(var(--x, 0) * -120deg)) rotateX(calc(var(--y, 0) * 20deg)) scale(1.43);
+}
+.cloud i:nth-child(8) {
+  transform: rotateY(62deg) translateZ(107px) rotateY(-62deg) rotateY(calc(var(--x, 0) * -120deg)) rotateX(calc(var(--y, 0) * 20deg)) scale(0.96);
+}
+.cloud i:nth-child(9) {
+  transform: rotateY(280deg) translateZ(76px) rotateY(-280deg) rotateY(calc(var(--x, 0) * -120deg)) rotateX(calc(var(--y, 0) * 20deg)) scale(1.29);
+}
+.cloud i:nth-child(10) {
+  transform: rotateY(160deg) translateZ(99px) rotateY(-160deg) rotateY(calc(var(--x, 0) * -120deg)) rotateX(calc(var(--y, 0) * 20deg)) scale(0.75);
+}
+.cloud i:nth-child(11) {
+  transform: rotateY(121deg) translateZ(53px) rotateY(-121deg) rotateY(calc(var(--x, 0) * -120deg)) rotateX(calc(var(--y, 0) * 20deg)) scale(1.01);
+}
+.cloud i:nth-child(12) {
+  transform: rotateY(102deg) translateZ(71px) rotateY(-102deg) rotateY(calc(var(--x, 0) * -120deg)) rotateX(calc(var(--y, 0) * 20deg)) scale(1.08);
+}
+.cloud i:nth-child(13) {
+  transform: rotateY(108deg) translateZ(26px) rotateY(-108deg) rotateY(calc(var(--x, 0) * -120deg)) rotateX(calc(var(--y, 0) * 20deg)) scale(1.04);
+}
+.cloud i:nth-child(14) {
+  transform: rotateY(41deg) translateZ(52px) rotateY(-41deg) rotateY(calc(var(--x, 0) * -120deg)) rotateX(calc(var(--y, 0) * 20deg)) scale(1.41);
+}
+.cloud i:nth-child(15) {
+  transform: rotateY(137deg) translateZ(106px) rotateY(-137deg) rotateY(calc(var(--x, 0) * -120deg)) rotateX(calc(var(--y, 0) * 20deg)) scale(0.84);
+}
+.cloud i:nth-child(16) {
+  transform: rotateY(349deg) translateZ(93px) rotateY(-349deg) rotateY(calc(var(--x, 0) * -120deg)) rotateX(calc(var(--y, 0) * 20deg)) scale(1.02);
+}
+.cloud i:nth-child(17) {
+  transform: rotateY(330deg) translateZ(82px) rotateY(-330deg) rotateY(calc(var(--x, 0) * -120deg)) rotateX(calc(var(--y, 0) * 20deg)) scale(0.89);
+}
+.cloud i:nth-child(18) {
+  transform: rotateY(129deg) translateZ(21px) rotateY(-129deg) rotateY(calc(var(--x, 0) * -120deg)) rotateX(calc(var(--y, 0) * 20deg)) scale(1.32);
+}
+.cloud i:nth-child(19) {
+  transform: rotateY(140deg) translateZ(61px) rotateY(-140deg) rotateY(calc(var(--x, 0) * -120deg)) rotateX(calc(var(--y, 0) * 20deg)) scale(0.82);
+}
+.cloud i:nth-child(20) {
+  transform: rotateY(232deg) translateZ(81px) rotateY(-232deg) rotateY(calc(var(--x, 0) * -120deg)) rotateX(calc(var(--y, 0) * 20deg)) scale(0.86);
+}
+.cloud i:nth-child(21) {
+  transform: rotateY(116deg) translateZ(78px) rotateY(-116deg) rotateY(calc(var(--x, 0) * -120deg)) rotateX(calc(var(--y, 0) * 20deg)) scale(1.35);
+}
+.cloud i:nth-child(22) {
+  transform: rotateY(152deg) translateZ(69px) rotateY(-152deg) rotateY(calc(var(--x, 0) * -120deg)) rotateX(calc(var(--y, 0) * 20deg)) scale(0.88);
+}
+.cloud i:nth-child(23) {
+  transform: rotateY(122deg) translateZ(88px) rotateY(-122deg) rotateY(calc(var(--x, 0) * -120deg)) rotateX(calc(var(--y, 0) * 20deg)) scale(1.03);
+}
+.cloud i:nth-child(24) {
+  transform: rotateY(160deg) translateZ(108px) rotateY(-160deg) rotateY(calc(var(--x, 0) * -120deg)) rotateX(calc(var(--y, 0) * 20deg)) scale(1);
+}
+.cloud:nth-child(2) {
+  transform: translate(240px, 120px);
+}
+.cloud:nth-child(3) {
+  transform: translate(-240px, 40px) rotateY(180deg);
+}
